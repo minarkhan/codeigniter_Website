@@ -22,9 +22,8 @@
 					'name' => 'required',
 					'email' => 'required|is_unique[users.email]',
 					'password' => 'required',
-					// 're_confirm' => 'required|matches[password]',
-				],
-			);
+					're_confirm' => 'required|matches[password]',
+				]);
 			if(!$validate){
 				$validation =  \Config\Services::validation();
 				return redirect()->to(base_url('admin/register'))->withInput()->with('validate', $validation);
